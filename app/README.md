@@ -28,7 +28,7 @@ Includes CRUD operations, search, filtering, tests, task scripts, and database m
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 service-membership/
@@ -60,13 +60,12 @@ service-membership/
 
 ### Clone:
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/sherlin@97/service-membership.git
 ```
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Create your `.env`:
 ```bash
@@ -78,11 +77,9 @@ Update:
 DATABASE_URL=postgresql://postgres:MyPassword@localhost:5432/service_membership
 ```
 
-⚠️ Do NOT upload `.env` to GitHub.
-
 ---
 
-## 📥 Install Dependencies
+##Install Dependencies
 
 ```bash
 python -m venv venv
@@ -92,21 +89,16 @@ pip install -r requirements.txt
 
 ---
 
-## 🛢 Create Database Tables
+## Create Database Tables
 
 ### Option 1 — Use script:
 ```bash
 python create_tables.py
 ```
 
-### Option 2 — Alembic:
-```bash
-alembic upgrade head
-```
-
 ---
 
-## ▶️ Run FastAPI
+## Run FastAPI
 
 ```bash
 uvicorn app.main:app --reload
@@ -119,7 +111,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## 🔎 Search & Filter
+## Search & Filter
 
 ### Search:
 ```
@@ -133,7 +125,7 @@ GET /members/filter?status=active
 
 ---
 
-## 🧪 Run Tests
+## Run Tests
 
 ```bash
 pytest
@@ -141,30 +133,13 @@ pytest
 
 ---
 
-## 🧰 Database Triggers (Optional)
+## Database Triggers (Optional)
 
 Run:
 ```bash
-psql -d service_membership -f triggers.sql
+psql -d service-membership -f triggers.sql
 ```
 
----
-
-## 🛠 Deploying Without Exposing DB Password
-
-1. Commit `.env.example` (safe)
-2. Do NOT commit `.env`
-3. On Render / Railway:
-   - Add environment variable:  
-     ```
-     DATABASE_URL=
-     ```
-4. Deploy — your password stays private.
-
----
-
-## 📄 License
-MIT
 
 ---
 
