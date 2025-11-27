@@ -1,7 +1,5 @@
-# app/schemas.py
 from pydantic import BaseModel, Field, constr
 import datetime
-from typing import Optional, List
 
 # Member
 class MemberCreate(BaseModel):
