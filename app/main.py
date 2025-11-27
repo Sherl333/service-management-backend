@@ -10,18 +10,6 @@ app = FastAPI(title="Service Membership API")
 def on_startup():
     create_db_and_tables()
 
-@app.get("/users/search")
-def search_users(q: str):
-    statement = select(User).where(User.name.ilike(f"%{q}%"))
-    results = session.exec(statement).all()
-    return results
-@app.get("/users/filter")
-def filter_users(role: str | None = None):
-    statement = select(User)
-    if role:
-        statement = statement.where(User.role == role)
-    return session.exec(statement).all()
-
 
 app.include_router(members.router)
 app.include_router(plans.router)
